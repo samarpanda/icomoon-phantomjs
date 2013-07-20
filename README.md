@@ -27,6 +27,24 @@ This module is intended to be a small chainable CLI utility.
 icomoon-phantomjs path/to/json/containing/svg/paths
 ```
 
+## Steps to export fonts
+
+1. Install phantom.js
+```shell
+brew install phantomjs  
+```
+
+2. Copy images to a directory and prepare .json file
+```shell
+echo '["/home/todd/github/twolfson.com/images/eye.svg",' > svgs.json
+echo '"/home/todd/github/twolfson.com/images/fork.svg"]' >> svgs.json
+```
+
+3. Get the URL of a zip file containg IconMoon assets
+```shell
+icomoon-phantomjs svgs.json # Returns http://icomoon.io/FontConverter/zip/2/icomoon94905.zip
+```
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint your code using [grunt](https://github.com/gruntjs/grunt) and test via `npm test`.
 
